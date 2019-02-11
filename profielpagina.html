@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profiel</title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!--Positions-->
+<style>
+  .alignleft {float: left;}
+  .alignright {float: right;}
+  p {text-align: center;}
+  div.a {text-ident: 50px;}
+</style>
+
+<body>
+
+<!--Name and avatar-->
+<div class="a w3-container w3-yellow">
+  <h1 class="alignright" style="font-size:110%"><b>Kevin</b><img src="https://cdn4.iconfinder.com/data/icons/flat-pro-business-set-1/32/people-customer-unknown-512.png" style="width:50px;height:50px;"></h1>
+</div>
+
+
+<!--Buttons-->
+<div class="w3-container w3-cell-middle w3-grey">
+  <button onclick="location.href='homepagina.html'" class="w3-btn w3-round-xlarge w3-hover-blue fill">Home</button>
+  <button class="w3-btn w3-blue w3-round-xlarge w3-hover-blue w3-background-grey fill">Profiel</button>
+  <button onclick="location.href='voortgangpagina.html'" class="w3-btn w3-round-xlarge w3-hover-blue fill">Voortgang</button>
+</div>
+
+<div style="height:10px" class="w3-container w3-blue"></div>
+
+<!--Body text-->
+<div class="w3-container">
+  <br><h style="font-size:200%"><b>Profiel</b><br></h>
+  <form id="profiel" action="homepagina.html">
+    <p class="alignleft">Voornaam: &emsp;&emsp;&emsp;<input type="text" name="voornaam"></p>
+    <p class="alignright">Studentnr: &emsp;<input type="number" name="studentnr">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <br><br><br>
+    <p class="alignleft">Achternaam: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="voornaam"></p>
+    <p class="alignright">Klas: &emsp; &nbsp;
+      <select>
+        <option value="V1A">V1A</option>
+        <option value="V1B">V1B</option>
+        <option value="V1C">V1C</option>
+        <option value="V1D">V1D</option>
+        <option value="V1E">V1E</option>
+        <option value="V1F">V1F</option>
+        <option value="V1G">V1G</option>
+      </select>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+    </p>
+    <br><br><br>
+    <p class="alignleft">Adres: &nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input style="height: 100px;" type="text" name="adres"></p>
+    <p class="alignright">Gekozen Studierichting: &emsp; <br>
+      <input type="radio" name="studierichting" value="SNE"> SNE</input><br>
+      <input type="radio" name="studierichting" value="BIM"> BIM</input><br>
+      <input type="radio" name="studierichting" value="SIE" checked> SIE</input><br>
+      <input type="radio" name="studierichting" value="TI"> TI&nbsp;&nbsp;</input><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <br><br><br><br><br><br>
+    <p class="alignleft">E-mail: &emsp;&emsp;&emsp;&emsp;&emsp;<input type="text" name="e-mail"></p><br><br><br>
+    <p class="alignleft">Telefoonnummer: <input type="number" name="telefoonnummer"></p>
+    <p class="alignright">Foto: &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src="https://cdn4.iconfinder.com/data/icons/flat-pro-business-set-1/32/people-customer-unknown-512.png" style="width:150px;height:150px;"></p>
+    <br><br><br><br>
+    <p class="alignleft">Geslacht: &emsp;&emsp;&emsp;&emsp; <input type="radio" name="geslacht" value="man">Man &emsp;&emsp;</input><input type="radio" name="geslacht" value="vrouw">Vrouw</input></P>
+    <br><br><br>
+    <p class="alignleft">Geboortedatum <input type="date" id="start" name="trip-start" value="2019-02-11" min="1950-01-01" max="2018-12-31"></p>
+    <p class="alignright"><button class="w3-btn w3-blue w3-round-xlarge w3-hover-blue w3-background-grey fill">Change</button></p>
+    <br><br>
+  </form>
+</div>
+
+<!--Black line-->
+<div>
+  <hr style="height:3px;border:none;color:#333;background-color:#333;"/>
+</div>
+
+<!--Bottom-->
+<footer>
+  <p><i>Deze opdracht is gemaakt in het kader van het vak Analyse & User Interface<br></i></p>
+  <p class="alignleft"><i>&nbsp;&nbsp;&nbsp;Auteur: Kevin Goes</i></p>
+  <p class="alignright"><i>Datum: Februari 2019&nbsp;&nbsp;&nbsp;</i></p>
+</footer>
+</body>
+</html>
