@@ -1,31 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
-  <title>Voortgang</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <title>WebLeertaak</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<!--Positions-->
 <style>
   .alignleft {float: left;}
   .alignright {float: right;}
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        transition: opacity 500ms;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .overlay:target {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .popup {
+        margin: 70px auto;
+        padding: 20px;
+        background: darkslateblue;
+        border-radius: 5px;
+        width: 30%;
+        position: relative;
+        transition: all 2s ease-in-out;
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        transition: all 200ms;
+        font-size: 30px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .popup .content {
+        max-height: 30%;
+        overflow: auto;
+    }
+  a:link {float: left; background-color: grey; color: white; padding: 14px 25px; text-align: center; text-decoration: none; display: inline-block;}
+  a:hover {background-color: dodgerblue}
   p {text-align: center;}
   div.a {text-ident: 50px;}
   table, th, td {border: 1px solid black; border-collapse: collapse;}
-  th, td {padding: 5px;}
+  th, td {padding: 5px; background-color: greenyellow;}
+  td {background-color: greenyellow;}
   th {text-align: left;}
-  table#t01 {background-color: greenyellow}
-  input#c01 {background-color: greenyellow; border: transparent}
+  table#t01 {background-color: greenyellow; border: transparent}
+  input{background-color: greenyellow; border: transparent}
+  a#a01 {}
+
 </style>
-
 <body>
-
 <!--Name and avatar-->
 <div class="a w3-container w3-yellow">
   <h1 class="alignright" style="font-size:110%"><b>Kevin</b><img src="https://cdn4.iconfinder.com/data/icons/flat-pro-business-set-1/32/people-customer-unknown-512.png" style="width:50px;height:50px;"></h1>
 </div>
-
 
 <!--Buttons-->
 <div class="w3-container w3-cell-middle w3-grey">
@@ -50,73 +94,124 @@
     <br><br>
     <img src="burddown_chart.png" style="width:250px;height:150px;">
   </p>
-  <table id="t01" style="width:50%">
-  <tr>
-    <th>Vakcode</th>
-    <th>ECTS</th>
-    <th>Datum behaald</th>
-  </tr>
-  <tr>
-    <td><input id="c01" type="text"></td>
-    <td><input id="c01" type="number"></td>
-    <td><input id="c01" type="date"></td>
-  </tr>
-  <tr>
-    <td><input id="c01" type="text"></td>
-    <td><input id="c01" type="number"></td>
-    <td><input id="c01" type="date"></td>
-  </tr>
-  <tr>
-    <td><input id="c01" type="text"></td>
-    <td><input id="c01" type="number"></td>
-    <td><input id="c01" type="date"></td>
-  </tr>
-  <tr>
-    <td><input id="c01" type="text"></td>
-    <td><input id="c01" type="number"></td>
-    <td><input id="c01" type="date"></td>
-  </tr>
-  <tr>
-    <td><input id="c01" type="text"></td>
-    <td><input id="c01" type="number"></td>
-    <td><input id="c01" type="date"></td>
-  </tr>
-  <tr>
-    <td><input id="c01" type="text"></td>
-    <td><input id="c01" type="number"></td>
-    <td><input id="c01" type="date"></td>
-  </tr>
-  <tr>
-    <td><input id="c01" type="text"></td>
-    <td><input id="c01" type="number"></td>
-    <td><input id="c01" type="date"></td>
-  </tr>
-  <tr>
-    <td><input id="c01" type="text"></td>
-    <td><input id="c01" type="number"></td>
-    <td><input id="c01" type="date"></td>
-  </tr>
-  <tr>
-    <td><input id="c01" type="text"></td>
-    <td><input id="c01" type="number"></td>
-    <td><input id="c01" type="date"></td>
-  </tr>
-  <tr>
-    <td><input id="c01" type="text"></td>
-    <td><input id="c01" type="number"></td>
-    <td><input id="c01" type="date"></td>
-  </tr>
-  <tr>
-    <td><input id="c01" type="text"></td>
-    <td><input id="c01" type="number"></td>
-    <td><input id="c01" type="date"></td>
-  </tr>
+  <table id="t01" bgcolor="#00FF00">
+    <tr>
+        <th>Vakcode</th>
+        <th>ECTS</th>
+        <th>Datum behaald</th>
+    </tr>
+    <tr>
+        <td><input style="font-size:20px;" type="text"></td>
+        <td><input style="font-size:20px; width: 40px;" type="number" id="ECTS1">
+        </td>
+        <td><input style="font-size:20px; width: 175px;" type="date"></td>
+    </tr>
+    <tr>
+        <td><input style="font-size:20px;" type="text"></td>
+        <td><input style="font-size:20px; width: 40px;" type="number" id="ECTS2">
+        </td>
+        <td><input style="font-size:20px; width: 175px;" type="date"></td>
+    </tr>
+    <tr>
+        <td><input style="font-size:20px;" type="text"></td>
+        <td><input style="font-size:20px; width: 40px;" type="number" id="ECTS3">
+        </td>
+        <td><input style="font-size:20px; width: 175px;" type="date"></td>
+    </tr>
+    <tr>
+        <td><input style="font-size:20px;" type="text"></td>
+        <td><input style="font-size:20px; width: 40px;" type="number" id="ECTS4">
+        </td>
+        <td><input style="font-size:20px; width: 175px;" type="date"></td>
+    </tr>
+    <tr>
+        <td><input style="font-size:20px;" type="text"></td>
+        <td><input style="font-size:20px; width: 40px;" type="number" id="ECTS5">
+        </td>
+        <td><input style="font-size:20px; width: 175px;" type="date"></td>
+    </tr>
+    <tr>
+        <td><input style="font-size:20px;" type="text"></td>
+        <td><input style="font-size:20px; width: 40px;" type="number" id="ECTS6">
+        </td>
+        <td><input style="font-size:20px; width: 175px;" type="date"></td>
+    </tr>
+    <tr>
+        <td><input style="font-size:20px;" type="text"></td>
+        <td><input style="font-size:20px; width: 40px;" type="number" id="ECTS7">
+        </td>
+        <td><input style="font-size:20px; width: 175px;" type="date"></td>
+    </tr>
+    <tr>
+        <td><input style="font-size:20px;" type="text"></td>
+        <td><input style="font-size:20px; width: 40px;" type="number" id="ECTS8">
+        </td>
+        <td><input style="font-size:20px; width: 175px;" type="date"></td>
+    </tr>
+    <tr>
+        <td><input style="font-size:20px;" type="text"></td>
+        <td><input style="font-size:20px; width: 40px;" type="number" id="ECTS9">
+        </td>
+        <td><input style="font-size:20px; width: 175px;" type="date"></td>
+    </tr>
+    <tr>
+        <td><input style="font-size:20px;" type="text"></td>
+        <td><input style="font-size:20px; width: 40px;" type="number" id="ECTS10">
+        </td>
+        <td><input style="font-size:20px; width: 175px;" type="date"></td>
+    </tr>
+    <tr>
+        <td><input style="font-size:20px;" type="text"></td>
+        <td><input style="font-size:20px; width: 40px;" type="number" id="ECTS11">
+        </td>
+        <td><input style="font-size:20px; width: 175px;" type="date"></td>
+    <tr>
+        <td><input style="font-size:20px;" type="text"></td>
+        <td><input style="font-size:20px; width: 40px;" type="number" id="ECTS12">
+        </td>
+        <td><input style="font-size:20px; width: 175px;" type="date"></td>
 </table>
-  <p><button class="w3-btn w3-grey w3-round-xlarge w3-hover-blue w3-background-grey fill alignleft">Bereken Studietempo</button></p>
 </div>
+
+<!--Popup-->
+<br>
+<a class="button" href="#popup" onclick="Calculate()">Bereken studietempo</a>
+<div id="popup" class="overlay">
+    <div class="popup">
+        <h1>Studietempo</h1>
+        <a id="a01" class="close" href="#" onclick="Calculate()">&times</a>
+        <div class="content">
+          <p>Je hebt tot nu toe <input type="text" id="sum" name="sum" style="background-color: darkslateblue; width:25px; font-size:20px; color: #00FF00;  border: none;" value=""> studiepunten gehaald</p>
+          <br>
+          <p>Je huidige studietempo is: <br> <input name="studiepuntenPM" style="background-color: darkslateblue; width:25px; font-size:20px; color: yellow;  border: none;" value="x"> ECT's / mnd</p>
+          <br>
+          <p>Op basis van dit studietempo heb je <input name="studietempo" style="background-color: darkslateblue; width:25px; font-size:20px; color: yellow;  border: none;" value="x"> maanden nodig voor je P.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function Calculate() {
+        var ects1 = parseInt(document.getElementById("ECTS1").value);
+        var ects2 = parseInt(document.getElementById("ECTS2").value);
+        var ects3 = parseInt(document.getElementById("ECTS3").value);
+        var ects4 = parseInt(document.getElementById("ECTS4").value);
+        var ects5 = parseInt(document.getElementById("ECTS5").value);
+        var ects6 = parseInt(document.getElementById("ECTS6").value);
+        var ects7 = parseInt(document.getElementById("ECTS7").value);
+        var ects8 = parseInt(document.getElementById("ECTS8").value);
+        var ects9 = parseInt(document.getElementById("ECTS9").value);
+        var ects10 = parseInt(document.getElementById("ECTS10").value);
+        var ects11 = parseInt(document.getElementById("ECTS11").value);
+        var ects12 = parseInt(document.getElementById("ECTS12").value);
+        var sum = document.getElementById("sum");
+        sum.value = ects1 + ects2 + ects3 + ects4 + ects5 + ects6 + ects7 + ects8 + ects9 + ects10 + ects11 + ects12;
+    }
+</script>
 
 <!--Black line-->
 <div>
+  <br><br>
   <hr style="height:3px;border:none;color:#333;background-color:#333;"/>
 </div>
 
